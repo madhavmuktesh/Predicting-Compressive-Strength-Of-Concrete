@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Input</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/image.png'); /* Ensure this path is correct */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5); /* Light overlay for better readability */
+        }
+
+        .container h2 {
+            text-align: center;
+            color: green;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/Prediction">
+            <h2>Concrete Strength Prediction</h2>
+            <label for="cement">Cement</label>
+            <input type="text" id="cement" name="cement" required>
+
+            <label for="blast_furnace_slag">Blast Furnace Slag</label>
+            <input type="text" id="blast_furnace_slag" name="blast_furnace_slag" required>
+
+            <label for="fly_ash">Fly Ash</label>
+            <input type="text" id="fly_ash" name="fly_ash" required>
+
+            <label for="water">Water</label>
+            <input type="text" id="water" name="water" required>
+
+            <label for="plasticizer">Superplasticizer</label>
+            <input type="text" id="plasticizer" name="plasticizer" required>
+
+            <label for="coarse_aggregate">Coarse Aggregate</label>
+            <input type="text" id="coarse_aggregate" name="coarse_aggregate" required>
+
+            <label for="fine_aggregate">Fine Aggregate</label>
+            <input type="text" id="fine_aggregate" name="fine_aggregate" required>
+
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
